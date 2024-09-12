@@ -1,0 +1,24 @@
+{
+    "name": "idct/symfony-async-monolog-handler",
+    "description": "Handler for Symfony 6+ framework and Monolog which allows sending logs using symf",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Idct\\SymfonyAsyncMonologHandler\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "IDCT Bartosz Pachołek",
+            "email": "bartosz+github@idct.tech"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "monolog/monolog": "^3.7",
+        "psr/log": "^3.0",
+        "symfony/messenger": "^6|^7",
+        "symfony/service-contracts": "^3.5"
+    }
+}
