@@ -46,9 +46,9 @@ class AsyncMessageHandler extends AbstractHandler
         $this->messageBus = $messageBus;
     }
 
-    public function __construct(int|string|Level $level = Level::Debug, bool $bubble = true)
+    public function __construct(int|string|Level $level = Level::Debug)
     {
-        parent::__construct($level, $bubble);
+        parent::__construct($level, false);
     }
 
     /**
@@ -56,6 +56,7 @@ class AsyncMessageHandler extends AbstractHandler
      */
     protected function write(LogRecord $record): void
     {
+        var_dump($record->channel);
         $this->messageBus->dispatch(new AsyncLogMessage($record));
     }
 

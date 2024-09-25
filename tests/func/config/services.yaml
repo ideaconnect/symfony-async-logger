@@ -22,9 +22,6 @@ services:
 
     monolog.handler.async-stream:
         class: IDCT\Logger\Handler\AsyncMessageHandler
-        arguments:
-            - 100
-            - false
         public: false
 
     IDCT\Logger\Messenger\AsyncLogMessageHandler:

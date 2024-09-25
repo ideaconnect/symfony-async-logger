@@ -18,9 +18,7 @@ class AsyncLogMessageHandler
 
     public function __invoke(AsyncLogMessage $message)
     {
-        /** @var AsyncLogMessage */
         $record = $message->getLogRecord();
-
         $this->actualHandler->handle($record);
     }
 }

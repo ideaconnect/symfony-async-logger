@@ -17,7 +17,7 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 )]
 class TestCommand extends Command
 {
-    public function __construct(protected LoggerInterface $asyncStreamLogger)
+    public function __construct(protected LoggerInterface $asyncLogger)
     {
         parent::__construct();
     }
@@ -34,7 +34,7 @@ class TestCommand extends Command
     {
         $io = new SymfonyStyle($input, $output);
 
-        $this->asyncStreamLogger->info('test123');
+        $this->asyncLogger->info('test123');
 
         return Command::SUCCESS;
     }

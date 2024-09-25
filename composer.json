@@ -1,6 +1,6 @@
 {
     "name": "idct/symfony-async-monolog-handler",
-    "description": "Handler for Symfony 6+ framework and Monolog which allows sending logs using symf",
+    "description": "Simple toolchain for Symfony 6+ framework and Monolog which allows sending logs using the symfony/messenger asynchronously.",
     "type": "library",
     "license": "MIT",
     "autoload": {
