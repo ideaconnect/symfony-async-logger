@@ -98,3 +98,4 @@ framework:
 # Contribution
 
 Any contribution towards better testing is more than welcome. In `tests/func` you can already find a preconfigured symfony which tests the solution when `app:test` (TestCommand.php) is executed.
+
