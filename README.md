@@ -15,7 +15,7 @@ As this is not a bundle, but a library which acts as a toolchain you need to exe
 1. Register the service in your `services.yaml`:
 ```yaml
     monolog.handler.async-stream:
-        class: IDCT\Logger\Handler\AsyncMessageHandler
+        class: IDCT\Logger\Monolog\Handler\AsyncMessageHandler
         public: false
 ```
 

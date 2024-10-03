@@ -21,7 +21,7 @@ services:
             - '../src/Kernel.php'
 
     monolog.handler.async-stream:
-        class: IDCT\Logger\Handler\AsyncMessageHandler
+        class: IDCT\Logger\Monolog\Handler\AsyncMessageHandler
         public: false
 
     IDCT\Logger\Messenger\AsyncLogMessageHandler:

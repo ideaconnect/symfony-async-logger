@@ -5,7 +5,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Idct\\SymfonyAsyncMonologHandler\\": "src/"
+            "IDCT\\Logger\\": "src/"
         }
     },
     "authors": [

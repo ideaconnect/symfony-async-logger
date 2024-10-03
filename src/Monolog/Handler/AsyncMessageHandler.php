@@ -1,22 +1,13 @@
-<?php declare(strict_types=1);
+<?php
 
-namespace IDCT\Logger\Handler;
+declare(strict_types=1);
 
-use Closure;
+namespace IDCT\Logger\Monolog\Handler;
+
 use IDCT\Logger\Model\AsyncLogMessage;
-use Monolog\Handler\FingersCrossed\ErrorLevelActivationStrategy;
-use Monolog\Handler\FingersCrossed\ActivationStrategyInterface;
 use Monolog\Level;
-use Monolog\Logger;
-use Monolog\ResettableInterface;
-use Monolog\Formatter\FormatterInterface;
 use Monolog\Handler\AbstractHandler;
-use Monolog\Handler\Handler;
-use Monolog\Handler\HandlerInterface;
-use Monolog\Handler\ProcessableHandlerTrait;
-use Psr\Log\LogLevel;
 use Monolog\LogRecord;
-use Monolog\Processor\ProcessorInterface;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Contracts\Service\Attribute\Required;
 
@@ -41,7 +32,7 @@ class AsyncMessageHandler extends AbstractHandler
     protected MessageBusInterface $messageBus;
 
     #[Required]
-    public function setMessageBus(MessageBusInterface $messageBus)
+    public function setMessageBus(MessageBusInterface $messageBus): void
     {
         $this->messageBus = $messageBus;
     }
@@ -52,15 +43,14 @@ class AsyncMessageHandler extends AbstractHandler
     }
 
     /**
-    * @inheritDoc
+     * @inheritDoc
      */
     protected function write(LogRecord $record): void
     {
-        var_dump($record->channel);
         $this->messageBus->dispatch(new AsyncLogMessage($record));
     }
 
-        /**
+    /**
      * @inheritDoc
      */
     public function handle(LogRecord $record): bool

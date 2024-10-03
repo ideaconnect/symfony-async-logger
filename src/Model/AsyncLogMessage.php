@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace IDCT\Logger\Model;
 
 use Monolog\LogRecord;
@@ -11,7 +13,7 @@ class AsyncLogMessage
 
     }
 
-    public function getLogRecord()
+    public function getLogRecord(): LogRecord
     {
         return $this->logRecord;
     }
